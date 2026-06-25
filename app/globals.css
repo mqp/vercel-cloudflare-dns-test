@@ -1,0 +1,116 @@
+:root {
+  --bg: #0b0e14;
+  --panel: #131822;
+  --border: #232a38;
+  --text: #e6edf3;
+  --muted: #8b97a7;
+  --accent: #5eead4;
+  --accent-dim: #2dd4bf22;
+  --error: #f87171;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 0 2.5rem;
+  font-size: 0.9rem;
+}
+
+.lookup-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.8rem;
+}
+
+input {
+  flex: 1;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button {
+  cursor: pointer;
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+  transition: opacity 0.15s ease;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.result {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  min-height: 3rem;
+}
+
+.result.error {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.placeholder {
+  color: var(--muted);
+}
