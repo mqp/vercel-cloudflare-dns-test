@@ -21,7 +21,7 @@ export default function LookupTool() {
 
     try {
       const res = await fetch(
-        `/api/lookup?host=${encodeURIComponent(host.trim())}&type=${type}`
+        `/api/lookup?host=${encodeURIComponent(host.trim())}&type=${type}`,
       );
       const data = await res.json();
       setIsError(!res.ok);
@@ -29,7 +29,7 @@ export default function LookupTool() {
     } catch (err) {
       setIsError(true);
       setResult(
-        `Request failed: ${err instanceof Error ? err.message : String(err)}`
+        `Request failed: ${err instanceof Error ? err.message : String(err)}`,
       );
     } finally {
       setLoading(false);
@@ -68,6 +68,7 @@ export default function LookupTool() {
         )}
       </div>
 
+      <p>This is the test branch!</p>
       <p className="meta">
         Tip: also reachable directly at{" "}
         <code>/api/lookup?host=example.com&amp;type=A</code>
